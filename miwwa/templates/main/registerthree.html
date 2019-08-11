@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+  <title> MIWA - {{ title }}  </title>
+  {% else %}
+  <title> MIWA </title>
+  {% endif %}
+
+        
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> <!--check to see what is wrong with this link-->
+        
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body class="reg-body">
+        <nav class="container nav-pad">
+    
+            <div class="text-left mb-4">
+            <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+            </div>
+                
+            <h4 class="text-center reg-text-color">Registration Form</h4>
+               
+        </nav>
+<div class="container">
+    <div class ="row">
+        <div class="col">
+            <div class ="wrapper mt-4">
+                        <p class="header-reg-bg">Upload</p>
+                     <form method="POST" enctype="multipart/form-data"  class="white-bg-wrapper">
+                            {{ form.hidden_tag() }}
+                          <div class="form-group form-inline">
+
+                            {{ form.death_cert.label }}
+
+                            {% if form.death_cert.errors %}
+                            {{ form.death_cert(type="file", class="form-control-file" , accept=".doc,.pdf,.jpg,.docx/*") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.death_cert.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.death_cert(type="file", class="form-control-file", accept=".doc,.pdf,.jpg,.docx/*" ) }}
+                            {% endif %}
+
+                          </div>
+                         <div class="form-group form-inline">
+
+                            {{ form.other.label }}
+
+                            {% if form.other.errors %}
+                            {{ form.other(type="file", class="form-control-file" , accept=".doc,.pdf,.jpg,.docx/*") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.other.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.other(type="file", class="form-control-file", accept=".jpg,.png/*" ) }}
+                            {% endif %}
+                          </div>
+                          <div class="text-right">
+                   
+                                {{ form.submit(class="btn for-submit-btn")}}
+                            </div>
+                             </form>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         
+     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

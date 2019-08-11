@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+  <title> MIWA - {{ title }}  </title>
+  {% else %}
+  <title> MIWA </title>
+  {% endif %}
+
+        
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> <!--check to see what is wrong with this link-->
+        
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+
+    <body id="for-profile">
+        <section id="side-menu">
+            <nav class="text-center">
+                <a class="underline active" href="#">Your Account</a>
+                <a class="underline" href="#">Dashboard</a>
+                <a class="underline" href="#">Children's Info</a>
+                <a class="underline" href="#">HMO Info</a>
+                <a href="faqs.html">FAQS</a>
+            </nav>   
+            <div class="text-center bottom-left">
+                <a class="" href="#"><div>Options</div></a>
+                <a class="" href="{{ url_for('main.logout') }}"><p>Log out</p></a> 
+                <a class="" href="#"><p>Contact Us</p></a>
+            </div>
+        </section>
+        
+        <section class="container" id="content-area">
+           
+            <div class="row">
+            <div class="col-md-5">
+                 <h4 class="heading">Account Overview</h4>
+            <div>
+                <p class="heading">Account status: <span class="status-color">Active</span></p>
+            </div>
+                           <p class="header-reg-bg">Personal Information</p>     
+                <form class="white-bg-wrapper">
+                    <div class="form-group form-inline">
+                         <br/> <br/>
+                        <label for="exampleFormControlInput1" class="mr-4">First Name</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.first_name}}" readonly>
+                    </div>
+                     <div class="form-group form-inline ">
+                        <label for="exampleFormControlInput1" class="mr-4">Last Name</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.last_name}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <!--insert date of birth info here-->
+                    </div>
+                   <div class="form-group form-inline">
+                    <label for="inputAddress" class="mr-4">Address</label>
+                    <textarea name="" value="{{current_user.address}}" id="" cols="30" rows="10" readonly></textarea>
+                    <input type="text" class="form-control" id="inputAddress" value="{{current_user.address}}" readonly>
+                  </div>
+                    <div class="form-group form-inline">
+                        <label for="exampleFormControlSelect1" class="mr-4">State of Resident</label>
+                         <input type="text" class="form-control" id="inputAddress" value=" {{current_user.state_of_resident}} " readonly>
+                    </div>
+                      <div class="form-group form-inline">
+                        <label for="exampleFormControlInput1" class="mr-4">Occupation</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.occupation}}" readonly>
+                    </div>
+                      <div class="form-group form-inline">
+                        <label for="exampleFormControlInput1" class="mr-4">Phone Number</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.phone}}" readonly>
+                    </div>
+                  
+                    <div class="form-group form-inline">
+                    <label for="exampleFormControlInput1" class="mr-4">No. of Children</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.number_of_children}}" readonly>
+                </div>
+                 <div class="form-group form-inline">
+                <label for="exampleFormControlSelect1"class="mr-4">Area of Interest</label>
+                 <input type="email" class="form-control" id="exampleFormControlInput1" value="{{current_user.interest}}" readonly>
+              </div>
+                </form>
+                </div> 
+                <div class="col-md-2"></div>
+                <div class="col-md-5 mt-4 move-column">
+                    <div class="text-center info-div">
+                        <img src="{{ url_for('static', filename='{{current_user.thumbnail}}') }}" height="100px">
+                        <h5>{{current_user.first_name}} {{current_user.last_name}} </h5>
+                        <p> {{current_user.phone}} </p>
+                        <p>{{current_user.email}}</p>
+                        <div>
+                        <a class="btn for-edit-btn mb-3" href="#"> Edit Profile</a></div>
+                    </div>
+                    
+                <p class="header-reg-bg">Millitary Officer's Information</p>
+                <form  class="white-bg-wrapper">
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                        <label for="exampleFormControlInput1" class="mr-4">Millitary Service Number</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{officer.service_no}}" readonly >
+                    </div>
+                <div class="form-group form-inline">
+                         <br/> <br/>
+                        <label for="exampleFormControlInput1" class="mr-4">Officer's First Name</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{officer.first_name}}" readonly >
+                    </div>
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                        <label for="exampleFormControlInput1" class="mr-4">Officer's Last Name</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{officer.last_name}}" readonly >
+                    </div>
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                        <label for="exampleFormControlInput1" class="mr-4">Officer's Rank</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{officer.rank}}" readonly>
+                    </div>
+                      <div class="form-group form-inline">
+                        <label for="exampleFormControlSelect1" class="mr-4">State of Origin</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" value="{{officer.state_of_origin}}" readonly >
+                    </div>
+                    <div class="text-right">
+                     <a class="btn for-edit-btn" href="#"> View Uploads</a>
+                    </div>
+                </form>
+                   
+                </div>
+            </div>
+        </section>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+         <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

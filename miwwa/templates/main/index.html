@@ -1,0 +1,235 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+        <title> MIWA - {{ title }}  </title>
+        {% else %}
+        <title> MIWA </title>
+        {% endif %}
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> <!--check to see what is wrong with this link-->
+        
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="for-index">
+      
+    <section class="home_bg"> 
+        <div class="container">       
+              <header class="head-main">
+                  <div class="navbar navbar-dark bglight box-shadow">
+                    <div class="container d-flex justify-content-between">
+                      <a href="#" class="navbar-brand d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+                      </a>
+                      <a class="nav-button ml-auto mr-4"><span id="nav-icon3">
+                          <span></span><span></span><span></span><span></span></span></a>
+                    </div>
+                  </div> <!--navbar end-->
+
+                  <div class="fixed-top main-menu">
+                    <div class="flex-center p-5">
+                      <ul class="nav flex-column">
+                        <li class="nav-item delay-1"><a class="nav-link" href="{{ url_for('main.home') }}">HOME</a></li>
+                
+                        <li class="nav-item delay-3"><a class="nav-link" href="{{ url_for('main.aboutus') }}">ABOUT US</a></li>
+                        <li class="nav-item delay-4"><a class="nav-link" href="{{ url_for('main.events') }}">EVENTS</a></li>
+                        <li class="nav-item delay-5"><a class="nav-link" href="{{ url_for('main.contact_us') }}">CONTACT US</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="#">Facebook</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://twitter.com/MiwaNigeria">Twitter</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://www.instagram.com/miwanigeria/">Instagram</a></li>
+       
+                      </ul>
+                    </div>
+                  </div> <!--main-menu end-->
+                </header>
+
+            <div class = "row">
+                <div class="col-md-6 white-txt-color">
+                    <div class= "center-text">
+                    <h3 style ="font-size:55px;">Welcome To Miwa</h3>
+                    <p class="text-center">"Life Without Our Husband</p>
+                    </div>
+                    
+                    <div class="for-bottom container">
+                        <div class='row'>
+                           <div class='col-md-4'> 
+                               <small>Legion House</small><br>
+                               <small>Area 3 Garki Abuja</small>
+                            </div> 
+                            <div class='col-md-4'> 
+                                <small>08034411192</small>
+                                <small>08187656654</small>
+                                
+                            </div> 
+                            <div class='col-md-4'>                                
+                                <small><a class="smedia" href="#"><i class="fa fa-facebook"></i> </a></small>
+                                <small><a class="smedia" href="https://twitter.com/MiwaNigeria"><i class="fa fa-twitter"></i></a></small>
+                                <small><a class="smedia" href="https://www.instagram.com/miwanigeria/"><i class="fa fa-instagram"></i> </a></small>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="counter_form">
+                  <div class="row fill_height">
+
+                    <div>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    <span>{{ message }}</span>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    </div>
+        
+                  <div class="col fill_height">
+                      <form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="" method="POST">
+                          {{ form.hidden_tag() }}
+                        <div class="counter_form_title">
+                                      <img src=" {{ url_for('static', filename='img/miwa_resized.svg') }}" height=""> 
+                                      </div>
+                                      
+                        {% if form.phone.errors %}
+                        {{ form.phone(type="tel",class="counter_input", placeholder="Phone Number", required="required")}}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.phone.errors %}
+                          <span> {{ error }} </span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.phone(type="tel",class="counter_input",  placeholder="Phone Number")}}
+                        {% endif %}
+                       
+                        {% if form.password.errors %}
+                        {{ form.password(type="password",class="counter_input",  placeholder="Password",required="required")}}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.password.errors %}
+                          <span> {{ error }} </span>
+                          {% endfor %}
+                        </div> 
+                        {% else %}
+                        {{ form.password(type="password",class="counter_input",placeholder="Password",required="required")}}
+                        {% endif %}
+                        <small> Need an account? <a href=" {{ url_for('main.reg_personal') }}"> Register Now </a></small>
+                      
+                        {{ form.submit(type="submit",class="counter_form_button")}}
+                        <small> <a href="{{ url_for('main.reset_request') }}"> Forgot Password ? </a> </small>
+                                      
+                      </form>
+                  </div>
+                </div>
+			</div>
+                
+            </div>
+            </div>
+        </section>
+        
+
+        
+         <section class="for-mobile text-center">
+             <header class="head-main">
+                  <div class="navbar navbar-dark bglight box-shadow">
+                    <div class="container d-flex justify-content-between">
+                      <a href="#" class="navbar-brand d-flex align-items-center">
+
+                      </a>
+                      <a class="nav-button ml-auto mr-4"><span id="nav-icon3">
+                          <span></span><span></span><span></span><span></span></span></a>
+                    </div>
+                  </div> <!--navbar end-->
+
+                  <div class="fixed-top main-menu">
+                    <div class="flex-center p-5">
+                      <ul class="nav flex-column">
+                        <li class="nav-item delay-1"><a class="nav-link" href="{{ url_for('main.home') }}">HOME</a></li>
+                
+                        <li class="nav-item delay-3"><a class="nav-link" href="{{ url_for('main.aboutus') }}">ABOUT US</a></li>
+                        <li class="nav-item delay-4"><a class="nav-link" href="{{ url_for('main.events') }}">EVENTS</a></li>
+                        <li class="nav-item delay-5"><a class="nav-link" href="{{ url_for('main.contact_us') }}">CONTACT US</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="#">Facebook</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://twitter.com/MiwaNigeria">Twitter</a></li>
+                        <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://www.instagram.com/miwanigeria/">Instagram</a></li>
+       
+                      </ul>
+                    </div>
+                  </div> 
+                </header>
+
+             <div class="mobile-wrap">
+
+                <div>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                <span>{{ message }}</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+               
+						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="" method="POST">
+                          {{ form.hidden_tag() }}
+                        <div class="counter_form_title">
+                                      <img src=" {{ url_for('static', filename='img/miwa_resized.svg') }}" height=""> 
+                                      </div>
+                                      
+                        {% if form.phone.errors %}
+                        {{ form.phone(type="tel",class="counter_input", placeholder="Phone Number", required="required")}}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.phone.errors %}
+                          <span> {{ error }} </span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.phone(type="tel",class="counter_input",  placeholder="Phone Number")}}
+                        {% endif %}
+                       
+                        {% if form.password.errors %}
+                        {{ form.password(type="password",class="counter_input",  placeholder="Password",required="required")}}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.password.errors %}
+                          <span> {{ error }} </span>
+                          {% endfor %}
+                        </div> 
+                        {% else %}
+                        {{ form.password(type="password",class="counter_input",placeholder="Password",required="required")}}
+                        {% endif %}
+                        <small> Need an account? <a href=" {{ url_for('main.reg_personal') }}"> Register Now </a></small>
+                      
+                        {{ form.submit(type="submit",class="counter_form_button")}}
+                        <small> <a href="{{ url_for('main.reset_request') }}"> Forgot Password ? </a> </small>
+                                      
+                      </form>
+                     
+
+			</div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>
+              $(document).ready(function(){
+              $('.nav-button').click(function(){
+                $('body').toggleClass('nav-open');
+              });
+            });
+        </script>
+       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+       <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script> 
+    </body>
+</html>

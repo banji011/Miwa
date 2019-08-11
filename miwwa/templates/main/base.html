@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+    <title> MIWA - {{ title }}  </title>
+    {% else %}
+    <title> MIWA  </title>
+    {% endif %}
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> 
+        
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="for-index">
+      
+        <section class="home_bg"> 
+            <div class="container">
+               
+                
+            <nav class="navbar navbar-expand-lg navbar-dark">
+              <a class="navbar-brand" href="#">
+                    <div class="text-left mb-4">
+            <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height=""> 
+            </div>
+                </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link " href="#">Testimonials <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact US</a>
+                  </li>
+
+                </ul>
+              </div>
+            </nav>
+            
+            <div class = "row">
+                <div class="col-md-6 white-txt-color">
+                    <div class= "center-text">
+                    <h3 style ="font-size:55px;">Welcome To Miwa</h3>
+                    <p class="text-center">"Life Without Our Husband</p>
+                    </div>
+                    <div class="for-bottom container">
+                        <div class='row'>
+                           <div class='col-md-4'> 
+                               <small>Legion House</small><br>
+                               <small>Area 3 Garki Abuja</small>
+                            </div> 
+                            <div class='col-md-4'> 
+                                <small>08034411192</small>
+                                <small>08187656654</small>
+                                
+                            </div> 
+                            <div class='col-md-4'> 
+                                <!-- <i class="fas fa-phone fa-3x mb-3 text-muted"></i> -->
+                                
+                                <small><i class="fa fa-facebook"></i> </small>
+                                <small><i class="fa fa-twitter"></i> </small>
+                                <small><i class="fa fa-instagram"></i> </small>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+               {% block content %}
+               
+               
+               {% endblock %}
+               
+                
+            </div>
+            </div>
+        </section>
+        
+<!--
+<div class="counter">
+		<div class="counter_background" style="background-image:url('../img/home_bg.svg';"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="counter_content">
+						<h2 class="counter_title">Register Now</h2>
+						<div class="counter_text"><p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dumy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p></div>
+-->
+
+						<!-- Milestones -->
+
+<!--						<div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">-->
+							
+							<!-- Milestone -->
+<!--
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="15">0</div>
+								<div class="milestone_text">years</div>
+							</div>
+-->
+
+							<!-- Milestone -->
+<!--
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
+								<div class="milestone_text">years</div>
+							</div>
+-->
+
+							<!-- Milestone -->
+<!--
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="670" data-sign-after="+">0</div>
+								<div class="milestone_text">years</div>
+							</div>
+-->
+
+							<!-- Milestone -->
+<!--
+							<div class="milestone">
+								<div class="milestone_counter" data-end-value="320">0</div>
+								<div class="milestone_text">years</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="counter_form">
+				<div class="row fill_height">
+					<div class="col fill_height">
+						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="#">
+							<div class="counter_form_title">courses now</div>
+							<input type="text" class="counter_input" placeholder="Your Name:" required="required">
+							<input type="tel" class="counter_input" placeholder="Phone:" required="required">
+							<select name="counter_select" id="counter_select" class="counter_input counter_options">
+								<option>Choose Subject</option>
+								<option>Subject</option>
+								<option>Subject</option>
+								<option>Subject</option>
+							</select>
+							<textarea class="counter_input counter_text_input" placeholder="Message:" required="required"></textarea>
+							<button type="submit" class="counter_form_button">submit now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+-->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

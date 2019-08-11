@@ -1,0 +1,116 @@
+<html>
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+        <title> MIWA - {{ title }}  </title>
+        {% else %}
+        <title> MIWA </title>
+        {% endif %}
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> <!--check to see what is wrong with this link-->
+        
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <header class="head-main">
+        <div class="navbar navbar-dark bglight box-shadow">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+            </a>
+            <a class="nav-button ml-auto mr-4"><span id="nav-icon3">
+                <span></span><span></span><span></span><span></span></span></a>
+          </div>
+        </div> <!--navbar end-->
+
+        <div class="fixed-top main-menu">
+          <div class="flex-center p-5">
+            <ul class="nav flex-column">
+              <li class="nav-item delay-1"><a class="nav-link" href="{{ url_for('main.home') }}">HOME</a></li>
+              <li class="nav-item delay-3"><a class="nav-link" href="{{ url_for('main.aboutus') }}">ABOUT US</a></li>
+              <li class="nav-item delay-4"><a class="nav-link" href="{{ url_for('main.events') }}">EVENTS</a></li>
+              <li class="nav-item delay-5"><a class="nav-link" href="{{ url_for('main.contact_us') }}">CONTACT US</a></li>
+              <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="#">Facebook</a></li>
+              <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://twitter.com/MiwaNigeria">Twitter</a></li>
+              <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://www.instagram.com/miwanigeria/">Instagram</a></li>
+
+            </ul>
+          </div>
+        </div> <!--main-menu end-->
+      </header>
+      <section class= "search-bg">
+        <div class="container text-center center-faq">
+        <h2 class="pt-5">How can we help you?</h2>
+        </div>
+    </section>
+        
+        <section class="Container mt-4 mb-5">
+            <h4 class="mb-3">Frequently Asked Questions</h4>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      What is MiWA about?
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      is MiWA only applicable to women?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What if i don't have my husband's death certicate?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <footer>
+            <div class="text-center">
+            <p>Copyright &copy; MiWA 2019</p>
+            </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function(){
+          $('.nav-button').click(function(){
+            $('body').toggleClass('nav-open');
+          });
+        });
+    </script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script> 
+    </body>
+</html>

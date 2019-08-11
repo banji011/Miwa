@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+        <title> MIWA - {{ title }}  </title>
+        {% else %}
+        <title> MIWA </title>
+        {% endif %}
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    </head>
+    <body id="for-events">
+        
+        <header class="head-main">
+            <div class="navbar navbar-dark bglight box-shadow">
+              <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                  <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+                </a>
+                <a class="nav-button ml-auto mr-4"><span id="nav-icon3">
+                    <span></span><span></span><span></span><span></span></span></a>
+              </div>
+            </div> <!--navbar end-->
+  
+            <div class="fixed-top main-menu">
+              <div class="flex-center p-5">
+                <ul class="nav flex-column">
+                  <li class="nav-item delay-1"><a class="nav-link" href="{{ url_for('main.home') }}">HOME</a></li>
+                  <li class="nav-item delay-3"><a class="nav-link" href="{{ url_for('main.aboutus') }}">ABOUT US</a></li>
+                  <li class="nav-item delay-4"><a class="nav-link" href="{{ url_for('main.events') }}">EVENTS</a></li>
+                  <li class="nav-item delay-5"><a class="nav-link" href="{{ url_for('main.contact_us') }}">CONTACT US</a></li>
+                  <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="#">Facebook</a></li>
+                  <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://twitter.com/MiwaNigeria">Twitter</a></li>
+                  <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://www.instagram.com/miwanigeria/">Instagram</a></li>
+  
+                </ul>
+              </div>
+            </div> <!--main-menu end-->
+          </header>
+        <section class="container display-events">
+            <h5>Upcoming Events</h5>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                      <img class="card-img-top" src=" {{ url_for('static', filename='img/lagos.jpg') }}" alt="Card image cap"> 
+                    </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>8th-12th July 2019</h6>
+                        <p>Lagos, Nigeria</p>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/osun.jpg') }}" alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>22nd-26th July 2019</h6>
+                        <p>Osun, Nigeria</p>
+                    </div>
+                </div> <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/fct.jpg') }}" alt="Card image cap">
+                </div>
+                <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>19th-23rd August 2019</h6>
+                        <p>Abuja, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/akwaibom.jpg') }}"  alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>9th-13th September 2019</h6>
+                        <p>Akwa Ibom, Nigeria</p>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/delta.jpg') }}"  alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>23rd-27th September 2019</h6>
+                        <p>Delta, Nigeria</p>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/kano.jpg') }}"  alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>14th-18th October 2019</h6>
+                        <p>Kano, Nigeria</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/sokoto.jpg') }}"  alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>21st-25th October 2019</h6>
+                        <p>Sokoto, Nigeria</p>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/imo.jpg') }}"  alt="Card image cap">
+                </div>
+                    <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>11th-15th November 2019</h6>
+                        <p>Imo, Nigeria</p>
+                    </div>
+                </div> <div class="col-md-4">
+                    <div class="card">
+                  <img class="card-img-top" src=" {{ url_for('static', filename='img/abia.jpg') }}"  alt="Card image cap">
+                </div>
+                <div class="for-event-text">
+                        <h6>MiWA Regional Training</h6>
+                        <h6>25th-29th November 2019</h6>
+                        <p>Abia, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="text-center">
+            <p>Copyright &copy; MiWA 2019</p>
+            </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.nav-button').click(function(){
+                  $('body').toggleClass('nav-open');
+                });
+              });
+          </script>
+         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+         <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

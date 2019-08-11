@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+  <title> MIWA - {{ title }}  </title>
+  {% else %}
+  <title> MIWA </title>
+  {% endif %}
+
+        
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="{{ url_for('static', filename='fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css"> <!--check to see what is wrong with this link-->
+        
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="reg-body">
+        <nav class="container nav-pad">
+    
+            <div class="text-left mb-4">
+            <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+            </div>
+                
+            <h4 class="text-center reg-text-color">Registration Form</h4>
+               
+        </nav>
+        
+        <div class="container">
+            <div class="row">
+                <div>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                <span>{{ message }}</span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+                <div class ="col">
+                <div class="wrapper">
+                <p class="header-reg-bg">Millitary Officer's Information</p>
+                <form method="POST" enctype="multipart/form-data" class="white-bg-wrapper">
+                        {{ form.hidden_tag() }}
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                       
+                        {{ form.first_name.label(class="mr-4") }}
+
+                        {% if form.first_name.errors %}
+                        {{ form.first_name(type="text",class="form-control",placeholder="First Name") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.first_name.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.first_name(type="text",class="form-control") }}
+                        {% endif %}
+                    </div>
+                <div class="form-group form-inline">
+                         <br/> <br/>
+                       
+                        {{ form.last_name.label(class="mr-4") }}
+
+                        {% if form.last_name.errors %}
+                        {{ form.last_name(type="text",class="form-control",placeholder="Last Name") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.last_name.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.last_name(type="text",class="form-control") }}
+                        {% endif %}
+
+                    </div>
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                        
+                        {{ form.service_number.label(class="mr-4") }}
+
+                        {% if form.service_number.errors %}
+                        {{ form.service_number(type="text",class="form-control",placeholder="Military Service Number") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.service_number.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.service_number(type="text",class="form-control") }}
+                        {% endif %}
+                    </div>
+                 <div class="form-group form-inline">
+                         <br/> <br/>
+                        
+                        {{ form.rank.label(class="mr-4") }}
+
+                        {% if form.rank.errors %}
+                        {{ form.rank(type="text",class="form-control",placeholder="Rank") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.rank.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.rank(type="text",class="form-control") }}
+                        {% endif %}
+                    </div>
+                      <div class="form-group form-inline">
+                        
+                        {{ form.state_of_origin.label(class="mr-4") }}
+
+                        {% if form.state_of_origin.errors %}
+                        {{ form.state_of_origin(class="form-control") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.state_of_origin.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.state_of_origin(class="form-control") }}
+                        {% endif %}
+                    </div>
+                <div class="form-group  form-inline">
+                        {{ form.dod.label(class="mr-4") }}
+
+                        {% if form.dod.errors %}
+                        {{ form.dod(type="date",class="form-control") }}
+                        <div class="invalid-feedback d-block">
+                          {% for error in form.dod.errors %}
+                          <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.dod(type="date",class="form-control") }}
+                        {% endif %}
+                    </div>
+                    <div class="text-center">
+                        {{ form.submit(class="btn for-submit-btn")}}
+                      </div>
+                </form>
+
+                </div>
+                      
+            </div>
+        </div>  
+        </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+         
+          <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>

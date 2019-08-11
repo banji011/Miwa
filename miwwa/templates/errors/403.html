@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="counter_form">
+    <div class="error-section">
+        <h1>You don't have permission to visit this page (403)</h1>
+        <p>Please ensure that you are logged in and try again</p>
+        <h3>
+          <a class="btn for-submit-btn" href="{{ url_for('main.home') }}"> Home </a>
+        </h3>
+      </div>
+</div>
+
+{% endblock content %}

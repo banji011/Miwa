@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv= "X-UA-compatible"content="IE-edge">
+        {% if title %}
+        <title> MIWA - {{ title }}  </title>
+        {% else %}
+        <title> MIWA </title>
+        {% endif %}
+        <link  rel = "stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    </head>
+    <body>
+        <header class="head-main">
+          <div class="navbar navbar-dark bg-light" id="nav-shadow">
+            <div class="container d-flex justify-content-between">
+              <a href="#" class="navbar-brand d-flex align-items-center">
+                <img src="{{ url_for('static', filename='img/miwa_resized.svg') }}" height="">
+              </a>
+              <a class="nav-button ml-auto mr-4"><span id="nav-icon3">
+                  <span></span><span></span><span></span><span></span></span></a>
+            </div>
+          </div> <!--navbar end-->
+
+          <div class="fixed-top main-menu">
+            <div class="flex-center p-5">
+              <ul class="nav flex-column">
+                <li class="nav-item delay-1"><a class="nav-link" href="{{ url_for('main.home') }}">HOME</a></li>
+                
+                <li class="nav-item delay-3"><a class="nav-link" href="{{ url_for('main.aboutus') }}">ABOUT US</a></li>
+                <li class="nav-item delay-4"><a class="nav-link" href="{{ url_for('main.events') }}">EVENTS</a></li>
+                <li class="nav-item delay-5"><a class="nav-link" href="{{ url_for('main.contact_us') }}">CONTACT US</a></li>
+                <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="#">Facebook</a></li>
+                <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://twitter.com/MiwaNigeria">Twitter</a></li>
+                <li class="nav-item delay-6"><a class="nav-link" id="smedia-nav" href="https://www.instagram.com/miwanigeria/">Instagram</a></li>
+<!--
+             
+-->
+              </ul>
+            </div>
+          </div> 
+        </header>
+        <section class="pad-sec">
+            <div class="container">
+                <div class="about-title mb-3 animated fadeInDown">About MiWA</div>
+                <div class="about-desc animated fadeInUp delay-1s">MiWA (Millitary Widows Association) is an initiative that strives to provide and protect the families of our fallen heroes. This organization is dedicated solely to the needs, concerns, and welfare of military surviving spouses and dependent children.
+                </div>  
+                <div class="about-desc animated fadeInUp delay-2s mt-2"> We are situated in every state in Nigeria with a headquarter in Abuja. We aim to reach out to all millitary widows to give them hope and ensure that they live a stable life after their husbands death. 
+                </div>
+                <div class="about-desc animated fadeInUp delay-3s mt-2"> Our Motto : Life Without our Husbands
+                </div>
+            </div>
+        </section>
+        <section class="pad-sec2 desktop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{ url_for('static', filename='img/empower.jpg') }}" class="img-shadow" width=100%> 
+                    </div>
+                    <div class="col-md-6 about-content">
+                        <p class="for-about-text mb-4">Empowerment</p>
+                        <div class="for-about-hook mb-4">Given the right tools, we can accomplish anything</div>
+                        <div class="for-about-txt">We empower our members through vocational trainings and encourage them to start businesses with their newly attained skills.</div>
+                    </div>
+                </div> 
+                <div class="row mt-5">
+                    <div class="col-md-6 about-content">
+                        <p class="for-about-text mb-4">Scholarship</p>
+                        <div class="for-about-hook mb-4">We provide educational benefits for our children</div>
+                        <div class="for-about-txt">Children are the leaders of tommorow and we strive to make available for our children opportunities that
+                        will give them a bright future.
+                        </div>
+                    </div>
+                    <div class="col-md-6 about-content">
+                       <img src="{{ url_for('static', filename='img/scholarship.jpg') }}" class="img-shadow" width=100%> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pad-sec2 mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{ url_for('static', filename='img/empower.jpg') }}" class="img-shadow" width=100%>
+                    </div>
+                    <div class="col-md-6 about-content">
+                        <p class="for-about-text mb-4">Empowerment</p>
+                        <div class="for-about-hook mb-4">Given the right tools, we can accomplish anything</div>
+                        <div class="for-about-txt">We empower our members through vocational trainings and encourage them to start businesses with their newly attained skills.</div>
+                    </div>
+                </div> 
+                <div class="row mt-5">
+                   
+                    <div class="col-md-6 about-content">
+                       <img src="{{ url_for('static', filename='img/scholarship.jpg') }}" class="img-shadow" width=100%>
+                    </div>
+                     <div class="col-md-6 about-content">
+                        <p class="for-about-text mb-4">Scholarship</p>
+                        <div class="for-about-hook mb-4">We provide educational benefits for our children</div>
+                        <div class="for-about-txt">Children are the leaders of tommorow and we strive to make available for our children opportunities that
+                        will give them a bright future.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        
+        <section class="pad-sec">
+            <div class="container">
+            <div class="about-title mb-5">Meet The Board</div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="mb-4">
+                            <h6> Brig Gen. Adakole Jones Akpa</h6>
+                            <h7>(Chairman Nigerian Legion)</h7>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Mrs. Edith Opesanmi</h5>
+                            <h7>Member</h7>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-4">
+                         <h5> Major Gen. Edmund Obi </h5>
+                        <h7>(Dir. VAD)</h7>
+                        </div>
+                         <div class="mb-4">
+                            <h5>Barr. Benson Agada A.</h5>
+                            <h7>Member</h7>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-4">
+                         <h5> Col Micha Gayya (Rtyd)</h5>
+                        <h7>Member</h7>
+                        </div>
+                        <div class="mb-4">
+                            <h5>Mrs. Maryam S. Hussein</h5>
+                            <h7>Member</h7>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-4">
+                         <h5> Mrs. Veronica Gift Aloko</h5>
+                        <h7>Member</h7>
+                        </div>
+                          <div class="mb-4">
+                         <h5>Princess Gloria Peregrino</h5>
+                        <h7>Member</h7>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+        <footer>
+            <div class="text-center">
+            <p>Copyright &copy; MiWA 2019</p>
+            </div>
+        </footer>
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+        <script>
+              $(document).ready(function(){
+              $('.nav-button').click(function(){
+                $('body').toggleClass('nav-open');
+              });
+            });
+        </script>
+        <script>
+            new wow().init();
+        </script>
+         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+         <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script> 
+    </body>
+</html>

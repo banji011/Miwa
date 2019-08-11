@@ -1,0 +1,9 @@
+*.txt
+*.pyc
+*.sql
+*.jpg
+*.png
+/venv
+*.vscode
+*.db
+/__pycache__
